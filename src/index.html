@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notepad</title>
-</head>
-<body>
 
-</body>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScriptでメモ帳</title>
+        <style type="text/css">
+            textarea{width:100%;height:30%;}
+        </style>
+    </head>
+    <body>
+        <h1>書いたものを保存、読み込みする</h1>
+        <form name="form1">
+            <textarea name="Memo"></textarea>
+        </form>
+        <p>
+            <input type="button" value="保存" onclick=save(); ></input>
+            <input type="button" value="読込" onclick=load(); ></input>
+        </p>
+        <script type="text/javascript" src = "script.js"></script>
+        
+    </body>
 </html>
