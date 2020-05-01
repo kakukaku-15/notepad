@@ -9,6 +9,6 @@ function load() {
 }
 
 function save() {
-    var MemoData = document.form1.Moemo.value;
-    localStorage.seetItem('MemoData', MemoData);
+    var MemoData = document.form1.Memo.value;
+    localStorage.setItem('MemoData', MemoData);
 }
