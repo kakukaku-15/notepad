@@ -54,11 +54,11 @@ function change(key_pos) {
     var newData = window.prompt("内容を変更して下さい", MemoData[key_pos].data);
     if (newData == "" || newData == null) {
         window.alert("キャンセルしました");
-        console.log("更新後のデータ: " + newData);
     } else {
         MemoData[key_pos].data = newData;
         localStorage.setItem('MemoData', JSON.stringify(MemoData));
         window.alert("データを更新しました");
+        console.log("更新後のデータ: " + newData);
         show();
     }
 }
