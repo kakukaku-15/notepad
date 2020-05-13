@@ -43,7 +43,9 @@ function show() {
     //console.log(Data.length);
     list.innerHTML ='';
     for (var i = 0; i < Data.length; i++) {
-        list.innerHTML += "<li id='" + i + "'>" + Data[i].data + "</li>";
+        list.innerHTML += "<p id='" + i + "'>" +
+            "<input type ='checkbox' onclick=changeLineThrough("+ i +")></input>" +
+            Data[i].data + "</p>";
         list.innerHTML += "<input type='button' value='変更' onclick=change(" + i + ")></input>";
         list.innerHTML += "<input type='button' value='削除' onclick=del(" + i + ")></input>";
     }
@@ -62,3 +64,15 @@ function change(key_pos) {
         show();
     }
 }
+
+function changeLineThrough(idname){
+    var obj = document.getElementById(idname);
+  
+    console.log(obj);
+  
+    if(obj.style.textDecoration == "line-through"){
+      obj.style.textDecoration = "none";
+    }else{
+      obj.style.textDecoration = "line-through";
+    }
+  }
