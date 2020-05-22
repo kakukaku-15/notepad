@@ -9,19 +9,25 @@
             textarea{width:100%;height:30%;}
         </style>
     </head>
-    <body>
+    <body onload="show(), showClock1(), showClock2()">
+        <input type="button" onclick="history.back()" value="戻る">
+        <div id= "RealDayClock"></div>
+        <div id= "RealtimeClockArea"></div>
         <h1>書いたものを保存、読み込みする</h1>
         <form name="list1">
             <div id="List"></div>
         </form>
+    <!--
         <form name="form1">
+            <input type="date" name="Deadline" id="">
             <textarea name="Memo"></textarea>
         </form>
         <p>
             <input type="button" value="保存" onclick=save(); ></input>
             <input type="button" value="読込" onclick=load(); ></input>
         </p>
-        <script type="text/javascript" src = "script.js"></script>
-        
+    -->
+        <button onclick="openPopup(-1)">データを追加する</button>
+      <script type="text/javascript" src = "script.js"></script>
     </body>
 </html>

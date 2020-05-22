@@ -1,0 +1,81 @@
+#h1 {
+    font-size:20px;
+    background: linear-gradient(transparent 60%, #FAE438 60%);
+}
+
+#RealDayClock {
+    /* float: right; */
+}
+
+#RealtimeClockArea {
+    /* float: right; */
+}
+
+#button {
+  width: auto;
+  padding:0;
+  margin:0;
+  background:none;
+  border:0;
+  font-size:0;
+  line-height:0;
+  overflow:visible;
+  cursor:pointer;
+}
+
+#memo {
+  border-style: none;
+  outline: none;
+}
+
+#neko {
+  border-style: none;
+  outline: none;
+}
+
+#tenki {
+  border-style: none;
+  outline: none; 
+}
+
+
+
+.frontitem2 {
+  position: relative;
+  width: 300px;
+  left: 250px;
+}
+
+.backneko {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+  position: absolute;
+  top: 30px;
+  right: 180px
+}
+
+#RealtimeClockArea {
+ font-weight:bold;
+ font-size:300%;
+  color:#606;
+  background-color: white;
+  
+  position: absolute;
+  top: 180px;
+  left: 70px;
+}
+
+.frontitem1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+  position: absolute;
+  top: 150px;
+  left: 350px;
+  
+}
