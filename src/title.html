@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScriptでメモ帳</title>
+        <style type="text/css">
+            textarea{width:100%;height:30%;}
+            </style>
+    </head>
+    <body onload="showClock1(), showClock2()">
+        <div id= "RealDayClock"></div>
+        
+        <!-- ちょっと書き直した -->
+        <div class = "frontitem2">
+            <input id = "tenki" type="image" src="img/tenki.png" onClick= "location.href = 'https://weather.yahoo.co.jp/weather/'" >
+            <div class = "backneko">
+                <!-- <input type="image" src = "img/neko.png" > -->
+                <img src="img/neko.png">
+                <div id= "RealtimeClockArea"></div>
+                <div class = "frontitem1">
+                    <!-- <img src="img/memo.png"> -->
+                    <input id = "memo" type="image" src="img/memo.png" onClick= "location.href = 'index.html'" >
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        
+
+    </body>
+    <script type="text/javascript" src = "script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</html>
