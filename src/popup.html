@@ -14,19 +14,20 @@
         <input type='date' name='DeadlineDate' id=''>
         <input type='time' name='DeadlineTime' id='' value="00:00"><br>
         <textarea name='Memo'></textarea><br>
-        <input type="button" value="保存" onclick="change0(key_pos), window.close()">
+        <input type="button" value="保存" onclick="change0(key_pos), pReload()">
         <input type="button" value="キャンセル" onclick="window.close()">
-        <input type="button" value="削除" onclick="del(key_pos), window.close()">
+        <input type="button" value="削除" onclick="del(key_pos), pReload()">
     </form>
 </body>
 <script>
     // データの読み込み
     var MemoData = JSON.parse(localStorage.getItem('MemoData'));  
-    if (MemoData.length > 0) {    // データが存在するとき
+    if (MemoData != null && MemoData.length > 0) {    // データが存在するとき
         console.log(MemoData.length);
         
         document.form2.Memo.value = MemoData[key_pos].data;
-        document.form2.DeadlineDate.value =  MemoData[key_pos].deadline;
+        document.form2.DeadlineDate.value =  MemoData[key_pos].deadline.date;
+        document.form2.DeadlineTime.value =  MemoData[key_pos].deadline.time;
     }
     
     function change0(key_pos) {
@@ -67,6 +68,12 @@
         }
         localStorage.setItem('MemoData', JSON.stringify(MemoData));
         console.log(JSON.stringify(MemoData));
+    }
+
+    // 親ウィンドウを更新して閉じる
+    function pReload() {
+        window.opener.location.reload();
+        window.close();
     }
 
 </script>
