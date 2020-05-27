@@ -1,3 +1,12 @@
 {
-    "main": "main.js"
+    "name": "notepad",
+    "version": "1.0.0",
+    "main": "title.html",
+    "window": {      
+        "transparent": true,  
+        "toolbar": false,       
+        "frame": false,         
+        "resizable": false,     
+        "always-on-top": true   
+    }
 }
