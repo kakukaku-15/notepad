@@ -7,9 +7,13 @@
         <title>JavaScriptでメモ帳</title>
         <style type="text/css">
             textarea{width:100%;height:30%;}
+            body {
+                background-image: url("img/back.png");
+            }
         </style>
     </head>
     <body onload="show(), showClock1(), showClock2()">
+        <div class = "backneko" style = "-webkit-app-region: no-drag;">
         <input type="button" onclick="history.back()" value="戻る">
         <div id= "RealDayClock"></div>
         <div id= "RealtimeClockArea"></div>
