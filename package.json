@@ -2,9 +2,11 @@
   "name": "notepad",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nw src",
+    "build": "nwbuild --platforms win64 src"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/kakukaku-15/notepad/issues"
   },
-  "homepage": "https://github.com/kakukaku-15/notepad#readme"
+  "homepage": "https://github.com/kakukaku-15/notepad#readme",
+  "dependencies": {
+    "nw": "0.46.0",
+    "nw-builder": "3.5.7"
+  }
 }
