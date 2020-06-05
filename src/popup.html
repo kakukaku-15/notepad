@@ -9,73 +9,15 @@
     var key_pos = location.search.substr(1);
     console.log(key_pos);
 </script>
-<body>
-    <form name='form2'>
-        <input type='date' name='DeadlineDate' id=''>
-        <input type='time' name='DeadlineTime' id='' value="00:00"><br>
+<body onload="load('inputForm', key_pos)">
+    <form name='form2' id="inputForm">
+        <input type='date' name='Date' id=''>
+        <input type='time' name='Time' id='' value="00:00"><br>
         <textarea name='Memo'></textarea><br>
-        <input type="button" value="保存" onclick="change0(key_pos), pReload()">
+        <input type="button" value="保存" onclick="change(key_pos, 'inputForm'), pReload()">
         <input type="button" value="キャンセル" onclick="window.close()">
         <input type="button" value="削除" onclick="del(key_pos), pReload()">
     </form>
+    <script type="text/javascript" src = "script.js"></script>
 </body>
-<script>
-    // データの読み込み
-    var MemoData = JSON.parse(localStorage.getItem('MemoData'));  
-    if (MemoData != null && MemoData.length > 0) {    // データが存在するとき
-        console.log(MemoData.length);
-        
-        document.form2.Memo.value = MemoData[key_pos].data;
-        document.form2.DeadlineDate.value =  MemoData[key_pos].deadline.date;
-        document.form2.DeadlineTime.value =  MemoData[key_pos].deadline.time;
-    }
-    
-    function change0(key_pos) {
-        var newData = {
-            "data": document.form2.Memo.value,
-            "deadline": {
-                "date": document.form2.DeadlineDate.value,
-                "time": document.form2.DeadlineTime.value
-            }
-        }
-        if (newData.data == "") {
-            window.alert("入力してください");
-        } else {
-            if (key_pos == -1) {
-                save(newData);
-            } else {
-                MemoData[key_pos] = newData;
-                localStorage.setItem('MemoData', JSON.stringify(MemoData));
-                //window.alert("データを更新しました");
-                console.log("更新後のデータ: " + newData);
-            }
-        }
-    }
-    
-    function del(key_pos) {
-        var MemoData = JSON.parse(localStorage.getItem('MemoData'));
-        console.log("消すデータ: " + MemoData[key_pos].data);
-        MemoData.splice(key_pos, 1);
-        localStorage.setItem('MemoData', JSON.stringify(MemoData));
-    }
-
-    function save(newData) {
-        if (localStorage.getItem('MemoData')) {
-            var MemoData = JSON.parse(localStorage.getItem('MemoData'));
-            MemoData.push(newData);
-        } else {
-            var MemoData = [newData];
-        }
-        localStorage.setItem('MemoData', JSON.stringify(MemoData));
-        console.log(JSON.stringify(MemoData));
-    }
-
-    // 親ウィンドウを更新して閉じる
-    function pReload() {
-        window.opener.location.reload();
-        window.close();
-    }
-
-</script>
-
 </html>

@@ -5,6 +5,7 @@
 
 #RealDayClock {
   /* float: right; */
+  background-color: white;
 }
 
 #RealtimeClockArea {
@@ -23,6 +24,22 @@ overflow:visible;
 cursor:pointer;
 }
 
+#news {
+  position: absolute;
+  font-size:20px;
+  top: 200px;
+  left: 500px;
+
+}
+
+#title {
+  position: absolute;
+  font-size:20px;
+  top: 200px;
+  left: 500px;
+
+}
+
 #memo {
 border-style: none;
 outline: none;
@@ -38,11 +55,6 @@ border-style: none;
 outline: none; 
 }
 
-#body {
-  margin: 0;
-  padding: 0;
-}
-
 
 .frontitem2 {
 position: relative;
@@ -55,8 +67,8 @@ left: 250px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  -webkit-app-region: drag;
-  
+  /* -webkit-app-region: drag; */
+  /* -webkit-app-region: no-drag; */
   position: absolute;
   top: 30px;
   right: 180px
@@ -83,4 +95,32 @@ position: absolute;
 top: 150px;
 left: 350px;
 
+}
+
+
+.balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+}
+
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+
+.balloon1-left p {
+  margin: 0;
+  padding: 0;
 }
