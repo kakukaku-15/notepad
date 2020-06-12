@@ -1,54 +1,57 @@
 h1 {
-    color: #996666;/*文字色*/
-    /*線の種類（点線）2px 線色*/
-    border-bottom: dashed 2px #996666;
+  color: #996666;/*文字色*/
+  /*線の種類（点線）2px 線色*/
+  border-bottom: dashed 2px #996666;
 }
 
 body {
-    font-weight:bold;
-    color: #996666;
-    background-image: url("img/back.png");
+  font-weight:bold;
+  color: #996666;
+  background-image: url("img/back.png");
+}
+
+#hand {
+  position: absolute;
+  width:100px;
+  top:35px;
+  left: 150px;
 }
 
 #RealDayClock {
-    font-weight:bold;
-    font-size:90%;
-    color:#996666;
-    position: absolute;
+  font-weight:bold;
+  font-size:90%;
+  color:#996666;
+  position: absolute;
 
-    top: 20px;
-    left: 20px;
+  top: 20px;
+  left: 20px;
 }
 
 #RealtimeClockArea {
-    font-weight:bold;
-    font-size:200%;
-    color:#996666;
-    position: absolute;
+  font-weight:bold;
+  font-size:200%;
+  color:#996666;
+  position: absolute;
 
-    top: 50px;
-    left: 20px;
+  top: 50px;
+  left: 20px;
 }
 
 .fuwauki_btn_red{
-    display: inline-block;
-    background-color: #E85A70;
-    color: #FFF;
-    width: 160px;
-    padding: 0.8em;
-    text-decoration: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-    -webkit-tap-highlight-color: transparent;
-    transition: .2s ease-out;
+  display: inline-block;
+  background-color: #E85A70;
+  color: #FFF;
+  width: 160px;
+  padding: 0.8em;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  -webkit-tap-highlight-color: transparent;
+  transition: .2s ease-out;
 }
 .fuwauki_btn_red:hover{
-    cursor: pointer;
-    text-decoration: none;
-    transform: translateY(-4px);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 3px 10px 0 rgba(0,0,0,0.12), 0 4px 7px -2px rgba(0,0,0,0.2);
-}
-
-#RealDayClock {
-
+  cursor: pointer;
+  text-decoration: none;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 3px 10px 0 rgba(0,0,0,0.12), 0 4px 7px -2px rgba(0,0,0,0.2);
 }

@@ -9,26 +9,26 @@
 }
 
 #RealtimeClockArea {
-font-weight:bold;
-font-size:200%;
-color:#996666;
-background-color: white;
+  font-weight:bold;
+  font-size:200%;
+  color:#996666;
+  background-color: white;
 
-position: absolute;
-top: 150px;
-left: 60px;
+  position: absolute;
+  top: 150px;
+  left: 60px;
 }
 
 #button {
   width: auto;
   padding:0;
-margin:0;
-background:none;
-border:0;
-font-size:0;
-line-height:0;
-overflow:visible;
-cursor:pointer;
+  margin:0;
+  background:none;
+  border:0;
+  font-size:0;
+  line-height:0;
+  overflow:visible;
+  cursor:pointer;
 }
 
 #news {
@@ -97,14 +97,14 @@ cursor:pointer;
 
 
 .frontitem1 {
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-position: absolute;
-top: 120px;
-left: 260px;
+  position: absolute;
+  top: 120px;
+  left: 260px;
 }
 
 

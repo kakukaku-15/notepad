@@ -8,27 +8,18 @@
     </head>
     <body onload="showList('List'), showClock1(), showClock2()">
         <div class = "backneko" style = "-webkit-app-region: no-drag;">
-        <!-- <div id= "RealDayClock"></div> -->
-        <!-- <div id= "RealtimeClockArea"></div> -->
-        <!-- ボタンクラスの追加 -->
+            <img src="img/handle.png" id = handle style = "-webkit-app-region: drag;">
+            <!-- <div id= "RealDayClock"></div> -->
+            <!-- <div id= "RealtimeClockArea"></div> -->
         <input type="button" class="fuwauki_btn_red" onclick="history.back()" value="戻る">
+        
         <h1>メモ内容</h1>
         <form name="list1">
             <div id="List"></div>
         </form>
-    <!--
-        <form name="form1">
-            <input type="date" name="Deadline" id="">
-            <textarea name="Memo"></textarea>
-        </form>
-        <p>
-            <input type="button" value="保存" onclick=save(); ></input>
-            <input type="button" value="読込" onclick=load(); ></input>
-        </p>
-    -->
         <button onclick="openPopup(-1)" class="fuwauki_btn_red">データを追加する</button>
+        
         <script type="text/javascript" src = "script.js"></script>
         <link rel="stylesheet" type="text/css" href="style2.css" />
-
     </body>
 </html>
