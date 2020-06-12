@@ -1,0 +1,173 @@
+#RealDayClock {
+  font-weight:bold;
+  font-size:90%;
+  color:#996666;
+  background-color: white;
+  position: absolute;
+  top: 133px;
+  left: 43px;
+}
+
+#RealtimeClockArea {
+  font-weight:bold;
+  font-size:200%;
+  color:#996666;
+  background-color: white;
+
+  position: absolute;
+  top: 150px;
+  left: 60px;
+}
+
+#button {
+  width: auto;
+  padding:0;
+  margin:0;
+  background:none;
+  border:0;
+  font-size:0;
+  line-height:0;
+  overflow:visible;
+  cursor:pointer;
+}
+
+#news {
+  position: absolute;
+  font-size:12px;
+  top: 20px;
+  left: 50px;
+}
+
+#List2 {
+  position: absolute;
+
+  font-size:12px;
+  top: 60px;
+  left: 350px;
+}
+
+#title {
+  position: absolute;
+  font-size:20px;
+  top: 200px;
+  left: 500px;
+  
+}
+
+#memo {
+  border-style: none;
+  outline: none;
+  width :100px;
+  height:auto;
+}
+
+#neko {
+  border-style: none;
+  outline: none;
+  width :300px;
+  height:auto;
+}
+
+#tenki {
+  border-style: none;
+  outline: none; 
+  width :120px;
+  height:auto;
+  position: absolute;
+  left: 290px;
+  top: 30px;
+}
+
+.frontitem2 {
+  position: relative;
+  top: 20px;
+  right: 70px;
+}
+
+.backneko {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+
+
+
+.frontitem1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  position: absolute;
+  top: 120px;
+  left: 260px;
+}
+
+
+.balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #996666;
+  font-size: 16px;
+  font-weight:bold;
+  background: #fce6e6;
+}
+
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #fce6e6;
+}
+
+.balloon1-left p {
+  margin: 0;
+  padding: 0;
+}
+
+.telop{
+  white-space: nowrap;
+  overflow: hidden;
+  animation: flow 12s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  
+}
+@keyframes flow{
+  from{
+    text-indent: 100%;
+  }
+  to{
+    /* 文字数に合わせて変更 */
+    text-indent: -100%;
+  }
+}
+
+.telop2{
+  white-space: nowrap;
+  overflow: hidden;
+  animation: flow 5s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  
+}
+@keyframes flow{
+  from{
+    text-indent: 100%;
+  }
+  to{
+    /* 文字数に合わせて変更 */
+    text-indent: -100%;
+  }
+}

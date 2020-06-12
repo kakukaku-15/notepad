@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScriptでメモ帳</title>
+        <style type="text/css">
+            textarea{width:100%;height:30%;}
+            </style>
+    </head>
+    <body onload="showClock1(), showClock2(), show2('List2')">
+        
+        <div class = "frontitem2">
+            <div class = "backneko" style = "-webkit-app-region: drag;">
+                <img src="img/neko.png" id = "neko">
+                <div id= "RealDayClock"></div>
+                <div id= "RealtimeClockArea"></div>
+                <div class = "frontitem1">
+                    <input id = "memo" type="image" src="img/memo.png" onClick= "location.href = 'index.html'" >
+                </div>
+            </div>
+            <input id = "tenki" type="image" src="img/tenki.png" onClick= "readText()" >
+        </div>
+
+        <div id = "news"></div>
+        <div id = "List2" class = "balloon1-left"></div>
+        
+        <!-- <div class="telop">Hello world!</div> -->
+        
+    </body>
+    <script type="text/javascript" src = "script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+
+</html>
