@@ -10,7 +10,7 @@ body {
   background-image: url("img/back.png");
 }
 
-#hand {
+#handle {
   position: absolute;
   width:100px;
   top:35px;
