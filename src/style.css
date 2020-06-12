@@ -1,12 +1,7 @@
-#h1 {
-  font-size:20px;
-  background: linear-gradient(transparent 60%, #FAE438 60%);
-}
-
 #RealDayClock {
   font-weight:bold;
   font-size:90%;
-  color:#606;
+  color:#996666;
   background-color: white;
   position: absolute;
   top: 133px;
@@ -16,7 +11,7 @@
 #RealtimeClockArea {
 font-weight:bold;
 font-size:200%;
-color:#606;
+color:#996666;
 background-color: white;
 
 position: absolute;
@@ -45,6 +40,7 @@ cursor:pointer;
 
 #List2 {
   position: absolute;
+
   font-size:12px;
   top: 60px;
   left: 350px;
@@ -119,9 +115,10 @@ left: 260px;
   padding: 7px 10px;
   min-width: 120px;
   max-width: 100%;
-  color: #555;
+  color: #996666;
   font-size: 16px;
-  background: beige;
+  font-weight:bold;
+  background: #fce6e6;
 }
 
 .balloon1-left:before {
@@ -131,7 +128,7 @@ left: 260px;
   left: -30px;
   margin-top: -15px;
   border: 15px solid transparent;
-  border-right: 15px solid beige;
+  border-right: 15px solid #fce6e6;
 }
 
 .balloon1-left p {

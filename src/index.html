@@ -5,19 +5,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JavaScriptでメモ帳</title>
-        <style type="text/css">
-            textarea{width:100%;height:30%;}
-            body {
-                background-image: url("img/back.png");
-            }
-        </style>
     </head>
     <body onload="showList('List'), showClock1(), showClock2()">
         <div class = "backneko" style = "-webkit-app-region: no-drag;">
-        <input type="button" onclick="history.back()" value="戻る">
-        <div id= "RealDayClock"></div>
-        <div id= "RealtimeClockArea"></div>
-        <h1>書いたものを保存、読み込みする</h1>
+        <!-- <div id= "RealDayClock"></div> -->
+        <!-- <div id= "RealtimeClockArea"></div> -->
+        <!-- ボタンクラスの追加 -->
+        <input type="button" class="fuwauki_btn_red" onclick="history.back()" value="戻る">
+        <h1>メモ内容</h1>
         <form name="list1">
             <div id="List"></div>
         </form>
@@ -31,7 +26,9 @@
             <input type="button" value="読込" onclick=load(); ></input>
         </p>
     -->
-        <button onclick="openPopup(-1)">データを追加する</button>
+        <button onclick="openPopup(-1)" class="fuwauki_btn_red">データを追加する</button>
         <script type="text/javascript" src = "script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style2.css" />
+
     </body>
 </html>
