@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>変更</title>
-    <style>
-        textarea{}
-    </style>
 </head>
 <script>
     var key_pos = location.search.substr(1);
@@ -17,10 +14,13 @@
         <input type='date' name='Date' id=''>
         <input type='time' name='Time' id='' value="00:00"><br>
         <textarea name='Memo'></textarea><br>
-        <input type="button" value="保存" onclick="change(key_pos, 'inputForm')">
-        <input type="button" value="キャンセル" onclick="window.close()">
-        <input type="button" value="削除" onclick="del(key_pos), pReload()">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+        <input type="button" class="fuwauki_btn_red" value="保存" onclick="change(key_pos, 'inputForm')">
+        <input type="button" class="fuwauki_btn_red" value="キャンセル" onclick="window.close()">
+        <input type="button" class="fuwauki_btn_red" value="削除" onclick="del(key_pos), pReload()">
     </form>
     <script type="text/javascript" src = "script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+
 </body>
 </html>
