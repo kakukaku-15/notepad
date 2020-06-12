@@ -4,17 +4,29 @@
 }
 
 #RealDayClock {
-  /* float: right; */
+  font-weight:bold;
+  font-size:90%;
+  color:#606;
   background-color: white;
+  position: absolute;
+  top: 133px;
+  left: 43px;
 }
 
 #RealtimeClockArea {
-  /* float: right; */
+font-weight:bold;
+font-size:200%;
+color:#606;
+background-color: white;
+
+position: absolute;
+top: 150px;
+left: 60px;
 }
 
 #button {
-width: auto;
-padding:0;
+  width: auto;
+  padding:0;
 margin:0;
 background:none;
 border:0;
@@ -26,10 +38,16 @@ cursor:pointer;
 
 #news {
   position: absolute;
-  font-size:20px;
-  top: 200px;
-  left: 500px;
+  font-size:12px;
+  top: 20px;
+  left: 50px;
+}
 
+#List2 {
+  position: absolute;
+  font-size:12px;
+  top: 60px;
+  left: 350px;
 }
 
 #title {
@@ -37,29 +55,37 @@ cursor:pointer;
   font-size:20px;
   top: 200px;
   left: 500px;
-
+  
 }
 
 #memo {
-border-style: none;
-outline: none;
+  border-style: none;
+  outline: none;
+  width :100px;
+  height:auto;
 }
 
 #neko {
-border-style: none;
-outline: none;
+  border-style: none;
+  outline: none;
+  width :300px;
+  height:auto;
 }
 
 #tenki {
-border-style: none;
-outline: none; 
+  border-style: none;
+  outline: none; 
+  width :120px;
+  height:auto;
+  position: absolute;
+  left: 290px;
+  top: 30px;
 }
 
-
 .frontitem2 {
-position: relative;
-width: 300px;
-left: 250px;
+  position: relative;
+  top: 20px;
+  right: 70px;
 }
 
 .backneko {
@@ -67,23 +93,12 @@ left: 250px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  /* -webkit-app-region: drag; */
-  /* -webkit-app-region: no-drag; */
   position: absolute;
-  top: 30px;
-  right: 180px
+  top: 10px;
+  left: 50px;
 }
 
-#RealtimeClockArea {
-font-weight:bold;
-font-size:300%;
-color:#606;
-background-color: white;
 
-position: absolute;
-top: 180px;
-left: 70px;
-}
 
 .frontitem1 {
 display: flex;
@@ -92,9 +107,8 @@ align-items: center;
 cursor: pointer;
 
 position: absolute;
-top: 150px;
-left: 350px;
-
+top: 120px;
+left: 260px;
 }
 
 
@@ -107,7 +121,7 @@ left: 350px;
   max-width: 100%;
   color: #555;
   font-size: 16px;
-  background: #e0edff;
+  background: beige;
 }
 
 .balloon1-left:before {
@@ -117,10 +131,46 @@ left: 350px;
   left: -30px;
   margin-top: -15px;
   border: 15px solid transparent;
-  border-right: 15px solid #e0edff;
+  border-right: 15px solid beige;
 }
 
 .balloon1-left p {
   margin: 0;
   padding: 0;
+}
+
+.telop{
+  white-space: nowrap;
+  overflow: hidden;
+  animation: flow 12s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  
+}
+@keyframes flow{
+  from{
+    text-indent: 100%;
+  }
+  to{
+    /* 文字数に合わせて変更 */
+    text-indent: -100%;
+  }
+}
+
+.telop2{
+  white-space: nowrap;
+  overflow: hidden;
+  animation: flow 5s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  
+}
+@keyframes flow{
+  from{
+    text-indent: 100%;
+  }
+  to{
+    /* 文字数に合わせて変更 */
+    text-indent: -100%;
+  }
 }
