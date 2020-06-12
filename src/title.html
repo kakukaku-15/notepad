@@ -10,27 +10,23 @@
             </style>
     </head>
     <body onload="showClock1(), showClock2(), show2('List2')">
-        <div id= "RealDayClock"></div>
-
-        <div id = "tenkiData">天気予報を表示する予定！</div>
         
-        <!-- ちょっと書き直した -->
         <div class = "frontitem2">
-            <input id = "tenki" type="image" src="img/tenki.png" onClick= "readText()" >
             <div class = "backneko" style = "-webkit-app-region: drag;">
-                <!-- <input type="image" src = "img/neko.png" > -->
-                <img src="img/neko.png">
+                <img src="img/neko.png" id = "neko">
+                <div id= "RealDayClock"></div>
                 <div id= "RealtimeClockArea"></div>
                 <div class = "frontitem1">
-                    <!-- <img src="img/memo.png"> -->
                     <input id = "memo" type="image" src="img/memo.png" onClick= "location.href = 'index.html'" >
                 </div>
             </div>
+            <input id = "tenki" type="image" src="img/tenki.png" onClick= "readText()" >
         </div>
 
         <div id = "news"></div>
-        <div id = "List2"></div>
-        <!--  -->
+        <div id = "List2" class = "balloon1-left"></div>
+        
+        <!-- <div class="telop">Hello world!</div> -->
         
 
     </body>

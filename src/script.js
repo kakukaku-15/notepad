@@ -191,6 +191,8 @@ function showClock2() {
 }
 
 function readText() {
+    document.getElementById( "news" ).innerHTML = "<div id = 'news' class = 'telop2' style = 'top: 0px; left:20px;'>天気予報！取ってきますんで！</div>"
+
     // XMLHttpRequest生成
     var req = new XMLHttpRequest();
     
@@ -204,15 +206,11 @@ function readText() {
     
                 // １日分のhtmlを作成
                 function makeDateHtml( day ) {
-                    var html = "<div class='balloon1-left' style=''>";
+                    var html = "<div class='telop' style=''>";
                     html += dat.title;
-                    html += "<br/>";
                     html += day.date;
                     html += "(" + day.telop + ")";
-                    html += "<br/>";
-                    // html += "<img height='96px' src='./img/" + queryChanImg[ i % 3 ] + "'/>";
-                    html += "　<img width='64px' src='" + day.image.url + "'/>";
-                    // html += "　<img height='96px' src='./img/" + pronamaChanImg[ i % 3 ] + "'/>";
+                    html += "　<img width='28px' src='" + day.image.url + "'/>";
                     html += "</div>";
                     return( html );
                 }
