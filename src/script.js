@@ -3,14 +3,23 @@ var myWindow;    // 子window
 
 // データを読み込みデフォルト値として表示
 function load(formId, key_pos) {
-    // データの読み込み
-    var MemoData = JSON.parse(localStorage.getItem('MemoData'));  
-    if (MemoData != null && MemoData.length > 0) {    // データが存在するとき
-        console.log(MemoData.length);
-        var form = document.getElementById(formId);
-        form.Memo.value = MemoData[key_pos].data;
-        form.Date.value =  MemoData[key_pos].deadline.date;
-        form.Time.value =  MemoData[key_pos].deadline.time;
+    var form = document.getElementById(formId);
+    if (key_pos == -1) {
+        // 日付の初期値を今日に
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+        form.Date.value =  year + "-" + ("00" + month).slice(-2) + "-" + ("00" + date).slice(-2);
+    } else {
+        // データの読み込み
+        var MemoData = JSON.parse(localStorage.getItem('MemoData'));  
+        if (MemoData != null && MemoData.length > 0) {    // データが存在するとき
+            console.log(MemoData.length);
+            form.Memo.value = MemoData[key_pos].data;
+            form.Date.value =  MemoData[key_pos].deadline.date;
+            form.Time.value =  MemoData[key_pos].deadline.time;
+        }
     }
 }
 
@@ -51,10 +60,16 @@ function showList(id) {
         var diffMSec = dnumTarget - dnumNow;
         var diffDays = diffMSec / (1000 * 60 * 60 * 24);
         var showDays = Math.ceil(diffDays);
-        //console.log(diffMSec);        
+        //console.log(diffMSec);    
+        var check = '';    
+        var line = '';    
+        if (Data[i].check == true) {
+            check = 'checked="checked"';
+            line = 'style="text-decoration: line-through;"';
+        } 
 
-        list.innerHTML += "<p id='" + i + "'>" +
-            "<label class='checkbox-inline'><input type ='checkbox' onclick=changeLineThrough("+ i +")></input>" +
+        list.innerHTML += "<p id='" + i + "'" + line + ">" +
+            "<label class='checkbox-inline'><input type ='checkbox' " + check + "onclick=changeLineThrough("+ i +")></input>" +
             Data[i].data + "<br>締切：" + Data[i].deadline.date + " " + Data[i].deadline.time +
             "<br>あと" + showDays + "日です。" + "</p>";
         list.innerHTML += "<input type='button' value='変更' onclick=openPopup(" + i + ")></input>";
@@ -97,7 +112,8 @@ function change(key_pos, formId) {
         "deadline": {
             "date": document.getElementById(formId).Date.value,
             "time": document.getElementById(formId).Time.value
-        }
+        },
+        "check": false
     }
     if (newData.data == "") {
         window.alert("入力してください");
@@ -105,29 +121,39 @@ function change(key_pos, formId) {
         if (key_pos == -1) {
             save(newData);
         } else {
+            var MemoData = JSON.parse(localStorage.getItem('MemoData'));
             MemoData[key_pos] = newData;
             localStorage.setItem('MemoData', JSON.stringify(MemoData));
             //window.alert("データを更新しました");
             console.log("更新後のデータ: " + newData);
         }
     }
+    pReload();
 }
-
 
 function changeLineThrough(idname){
     var obj = document.getElementById(idname);
-  
+    var MemoData = JSON.parse(localStorage.getItem('MemoData'));
     console.log(obj);
   
-    if(obj.style.textDecoration == "line-through"){
-      obj.style.textDecoration = "none";
+    if(MemoData[idname].check == true){
+        MemoData[idname].check = false;
+        obj.style.textDecoration = "none";
     }else{
-      obj.style.textDecoration = "line-through";
+        MemoData[idname].check = true;
+        obj.style.textDecoration = "line-through";
     }
+    localStorage.setItem('MemoData', JSON.stringify(MemoData));
 }
 
 function openPopup(key_pos) {
-    myWindow = window.open("popup.html?" + key_pos, "myWindow", "width=500, height=400");
+    var w = 500;
+    var h = 100;
+    var t = window.screenTop + w / 2;
+    var l = window.screenLeft + h / 2;
+
+    myWindow = window.open("popup.html?" + key_pos, "myWindow", 
+        "width=" + w + ", height=" + h + ", top=" + t + ", left=" + l);
 }
 
 // 親ウィンドウを更新して閉じる
@@ -178,8 +204,6 @@ function readText() {
     
                 // １日分のhtmlを作成
                 function makeDateHtml( day ) {
-                    // var queryChanImg   = [ "query_chan_osaka.png", "query_chan_kagawa.png", "query_chan_kyoto.png" ];
-                    // var pronamaChanImg = [ "201312_SD.png", "sd04.png", "201503_SD.png" ];
                     var html = "<div class='balloon1-left' style=''>";
                     html += dat.title;
                     html += "<br/>";
