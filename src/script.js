@@ -50,7 +50,7 @@ function showList(id) {
     console.log(nowDate);
     
     //console.log(Data.length);
-    list.innerHTML ="";
+    list.innerHTML = "";
     for (var i = 0; Data != null && i < Data.length; i++) {
         console.log(Data[i].deadline);        
         var dDate = Data[i].deadline.date;
@@ -61,17 +61,20 @@ function showList(id) {
         var showDays = Math.ceil(diffDays);
         //console.log(diffMSec);    
         var check = "";    
-        var line = "";    
+        var line = "";  
+        var html = "";  
         if (Data[i].check == true) {
             check = "checked='checked'";
             line = "style='text-decoration: line-through;'";
         } 
 
-        list.innerHTML += "<p id='" + i + "'" + line + ">" +
-            "<label class='checkbox-inline'><input type ='checkbox' " + check + "onclick=changeLineThrough("+ i +")></input>" +
-            Data[i].data + "<br>締切：" + Data[i].deadline.date + " " + Data[i].deadline.time +
-            "<br>あと" + showDays + "日です。" + "</p>";
-        list.innerHTML += "<input type='button' class='fuwauki_btn_red' value='変更' onclick=openPopup(" + i + ")></input>";
+        html += "<p id='" + i + "'" + line + ">";
+        html += "<label class='checkbox-inline'><input type ='checkbox' " + check + "onclick=changeLineThrough("+ i +")></input>";
+        html += Data[i].data.replace(/\n/g, '<br>') + "<br>";
+        html += "締切：" + Data[i].deadline.date + " " + Data[i].deadline.time + "<br>";
+        html += "あと" + showDays + "日です。" + "</p>";
+        html += "<input type='button' class='fuwauki_btn_red' value='変更' onclick=openPopup(" + i + ")></input>";
+        list.innerHTML += html;
     }
 }
 
@@ -81,8 +84,8 @@ function show2(id) {
     var nowDate = new Date();
     var dnumNow = nowDate.getTime();
     console.log(nowDate);
-
-    list.innerHTML ='';
+    var count = 0;
+    list.innerHTML = "";
     for (var i = 0; Data != null && i < Data.length; i++) {
         console.log(Data[i].deadline);  
         if(Data[i].check == true) {
@@ -95,19 +98,24 @@ function show2(id) {
         var diffMSec = dnumTarget - dnumNow;
         var diffDays = diffMSec / (1000 * 60 * 60 * 24);
         var showDays = Math.ceil(diffDays);
-        
+        var html = "";
+
         if (showDays > 7) {
             continue;
-        } else if (showDays < 0) {
-            list.innerHTML += "<p>" + Data[i].data + 
-            "<br>締切：" + Data[i].deadline.date + " " + Data[i].deadline.time +
-            "<br>期限を過ぎています</p>";
-        } else { // 一週間以内    
-            list.innerHTML += "<p>" + Data[i].data + 
-            "<br>締切：" + Data[i].deadline.date + " " + Data[i].deadline.time +
-            "<br>あと" + showDays + "日だよぉ</p>";
-        }
-        list.innerHTML += "<hr>";
+        } else {
+            html += "<p>" + Data[i].data + "<br>";
+            html += "締切：" + Data[i].deadline.date + " " + Data[i].deadline.time + "<br>";
+            if (showDays < 0) {
+                html += "期限を過ぎています</p>";
+            } else { // 一週間以内    
+                html += "あと" + showDays + "日だよぉ</p>";
+            }
+        } 
+        list.innerHTML += html + "<hr>";
+        count++;
+    }
+    if (count < 1) {
+        list.innerHTML = "今はなにもないよ！やったね！！";
     }
 }
 
@@ -152,8 +160,8 @@ function changeLineThrough(idname){
 }
 
 function openPopup(key_pos) {
-    var w = 300;
-    var h = 300;
+    var w = 230;
+    var h = 250;
     var t = window.screenTop + h / 2;
     var l = window.screenLeft + document.body.clientWidth - w;
 
