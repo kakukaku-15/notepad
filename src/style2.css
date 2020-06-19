@@ -55,3 +55,12 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 3px 10px 0 rgba(0,0,0,0.12), 0 4px 7px -2px rgba(0,0,0,0.2);
 }
+
+p {
+  width: 400px;
+}
+
+textarea {
+  width: 203px;
+  height: 45px;
+}

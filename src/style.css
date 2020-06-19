@@ -171,3 +171,7 @@
     text-indent: -100%;
   }
 }
+
+p {
+  width: 170px;
+}
