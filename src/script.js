@@ -103,19 +103,19 @@ function show2(id) {
         if (showDays > 7) {
             continue;
         } else {
-            html += "<p>" + Data[i].data + "<br>";
+            html += Data[i].data + "<br>";
             html += "締切：" + Data[i].deadline.date + " " + Data[i].deadline.time + "<br>";
             if (showDays < 0) {
-                html += "期限を過ぎています</p>";
+                html += "期限を過ぎています";
             } else { // 一週間以内    
-                html += "あと" + showDays + "日だよぉ</p>";
+                html += "あと" + showDays + "日だよぉ";
             }
         } 
         list.innerHTML += html + "<hr>";
         count++;
     }
     if (count < 1) {
-        list.innerHTML = "今はなにもないよ！やったね！！";
+        list.innerHTML = "<center>今はなにもないよ！<br>やったね！！</center>";
     }
 }
 

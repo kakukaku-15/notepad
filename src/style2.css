@@ -57,7 +57,8 @@ body {
 }
 
 p {
-  width: 400px;
+  width: 530px;
+  word-wrap: break-word;
 }
 
 textarea {
