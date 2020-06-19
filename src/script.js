@@ -153,9 +153,9 @@ function changeLineThrough(idname){
 
 function openPopup(key_pos) {
     var w = 300;
-    var h = 100;
+    var h = 300;
     var t = window.screenTop + h / 2;
-    var l = window.screenLeft + w / 2;
+    var l = window.screenLeft + document.body.clientWidth - w;
 
     myWindow = window.open("popup.html?" + key_pos, "myWindow", 
         "width=" + w + ", height=" + h + ", top=" + t + ", left=" + l);
@@ -188,7 +188,7 @@ function showClock2() {
     var now = new Date();
     var myDay = new Array("日", "月", "火", "水", "木", "金", "土");
     var Year = now.getFullYear();
-    var month = now.getMonth();
+    var month = now.getMonth() + 1;
     var date = now.getDate();
     var day = now.getDay();
     var msg = "🌸" + Year + "年" + month + "月" + date + "日（" + myDay[day] + "曜日）";
