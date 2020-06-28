@@ -204,7 +204,7 @@ function showClock2() {
 }
 
 function readText() {
-    document.getElementById("news").innerHTML = "<div id='news' class='telop2' style='top: 0px; left:20px;'>天気予報！取ってきますんで！</div>";
+    document.getElementById("news").innerHTML = "<div id='news' class='telop2' style='top: 0px; left:0px;'>天気予報！取ってきますんで！</div>";
 
     // XMLHttpRequest生成
     var req = new XMLHttpRequest();
@@ -235,9 +235,6 @@ function readText() {
                     // １日分のhtmlを作成
                     html += makeDateHtml(dat.forecasts[0]) + "<br/>";
                 }
-    
-                // 詳細情報の追加
-                // html += "<div class='box'>" + dat.description.text.replace(/¥r?¥n/g, '<br/>') + "</div>";
     
                 // 作成したhtmlを流し込む
                 document.getElementById("news").innerHTML = html;
