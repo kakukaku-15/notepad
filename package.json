@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nw src",
-    "build": "nwbuild --platforms win64 src --disable-gpu --force-cpu-draw"
+    "start": "nw src --disable-gpu --force-cpu-draw",
+    "build": "nwbuild --platforms win64 src"
   },
   "repository": {
     "type": "git",
